@@ -1,0 +1,20 @@
+# Ignore Python bytecode files
+*.py[cod]
+__pycache__/
+
+# Ignore environment files
+.env
+venv/
+env/
+
+# Ignore other OS-specific or editor-specific files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+api_keys.py
+__pycache__/api_keys.cpython-311.pyc
+Secrets/spotify_refresh_token.json
+Secrets/location_data.json
+Error_Logs/error_log.txt
