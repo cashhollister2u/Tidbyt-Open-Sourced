@@ -15,6 +15,7 @@
 - IGNORE everything after "Create an App" the led applicaiton handles the rest
 - Ensure "REDIRECT URI" is set to http://localhost:8080/
 - CLIENT ID AND CLIENT SECRET are required for the led application
+    - To Locate go to "DashBoard" select the app you created and click on "Settings" in the top right corner.
 
 ## Download Raspberry Pi Imager
 - https://www.raspberrypi.com/software/
