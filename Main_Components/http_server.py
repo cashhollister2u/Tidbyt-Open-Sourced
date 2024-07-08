@@ -8,6 +8,8 @@ from Main_Components.user_data import User, ShareUser
 from Api_Connections.spotify.auth import get_user_authorization, get_spotify_refresh
 from Bash_Scripts.off_command import off_switch
 
+from Error_Logs.log_tools import log_error_to_file
+
 app = Flask(__name__)
 
 # user cache
@@ -82,9 +84,12 @@ def update_user_channel(client_id:str, channel:str):
 # Spotify auth Process
 @app.route('/auth_url')
 def get_spotify_auth_url():
-     auth_url = get_user_authorization()
-     return auth_url, 200
-
+     try:
+          auth_url = get_user_authorization()
+          return auth_url, 200
+     except Exception as e:
+          log_error_to_file(e)
+          
 
 # Spotify auth Process
 @app.route('/spotify_refresh/<string:auth_code>')
