@@ -126,20 +126,7 @@ def turn_off_display(client_id:str):
           return jsonify(f"Invalid client id"), 404
 
 
-# finds local ip to run server on private network
-def get_local_ip():
-    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-        try:
-            s.connect(('8.8.8.8', 80))
-            local_ip = s.getsockname()[0]
-        except Exception as e:
-            print(f"Error obtaining local IP: {e}")
-            local_ip = '0.0.0.0'
-    return local_ip
-
-
 # exported to be called in main as a threaded instance
 def run_flask_server():
-    local_ip = get_local_ip()
-    app.run(host=local_ip, port=6000, debug=False, use_reloader=False, threaded=False)
+    app.run(host="0.0.0.0", port=6000, debug=False, use_reloader=False, threaded=False)
 
