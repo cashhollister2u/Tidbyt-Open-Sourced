@@ -134,7 +134,7 @@ def get_local_ip():
             local_ip = s.getsockname()[0]
         except Exception as e:
             print(f"Error obtaining local IP: {e}")
-            local_ip = '127.0.0.1'
+            local_ip = '0.0.0.0'
     return local_ip
 
 
