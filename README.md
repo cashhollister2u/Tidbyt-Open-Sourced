@@ -105,6 +105,13 @@
 
 ## That completes the software set up for the Raspberry Pi 4 
 - If the hardware is configured propperly you should see the LED Display propt you to connect the iOS app
+- Download the app from the iOS store
+- Open the app
+- Click "Settings"
+- Click "Show" next to the Spotify Auth
+- Click "Authenticate"
+- Click "Home" on the app display and select one fo the four display options
+  - Ensure Spotify is currently playing. Otherwise the screen may display an error.
 
 # Hardware List (Raspberry Pi 4)
 - Raspbery Pi 4
