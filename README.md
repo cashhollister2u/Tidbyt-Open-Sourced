@@ -112,6 +112,13 @@
 - Click "Authenticate"
 - Click "Home" on the app display and select one fo the four display options
   - Ensure Spotify is currently playing. Otherwise the screen may display an error.
+ 
+## Basic Operation:
+- Plug in the board to turn on
+- To connect select one of the 4 displays in the iOS app when the screen prompts you to "connect to iOS"
+- To turn off the board use the power button in the iOS app
+  - To be safe look through the vent holes in the back for the green light to stop flashing on the Raspberry Pi
+- WARNING: If the board is unpluged without using the iOS app it may corrupt the files.
 
 # Hardware List (Raspberry Pi 4)
 - Raspbery Pi 4
