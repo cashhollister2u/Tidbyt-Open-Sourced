@@ -9,7 +9,18 @@
 <img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/fff90604-6f77-404c-9fad-a8ef23ce79ab" alt="IMG_0584" width="300" height="200">
 <img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/5357fde8-a1d5-40a6-84a5-42ef1514189a" alt="IMG_0584" width="300" height="200">
 
+# 3D Printer Files
+- It may be a good idea to initiate the print before completing the tutorials. Print time is roughly 6.5 hours (Bambu Labs P1S)
+- Files:
+  - 
 
+# Hardware Set-Up
+- This page provides detailed instructions on how to propperly connect the bonnet to either the Raspberry Pi 4 or the RaspBerry Pi Zero 2 as well as connecting the bonnet to the LED Matrix.
+  - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/driving-matrices
+
+
+
+# Software Set-Up
 
 ## Sign-Up For Free API Services:
 - All api services provided by the led application utilize the free trials of the following. 
@@ -82,6 +93,15 @@
   - Save by clicking “CTRL + x” then “y” then “Enter”
   - The screen may look frozen but the input bar is at the bottom just type “clear” and click "enter"
 - Type the following command into the terminal “sudo reboot -h now” (reboots / device boot can take 30s - 60s)
+
+## STEP 6: (Optional ONLY if you are skipping the soldering in the hardware set-up)
+- Type the following commands into the terminal:
+  - "cd"
+  - "sudo bash rgb-matrix.sh"
+  - All this does is replace the current “rpi-rgb-led-matrix” directory
+  - Then follow the prompts
+    - Refer to "Step 6" in this link if you have isses : https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/driving-matrices
+  - When prompted choose “convenience” instead of "quality"
 
 ## That completes the software set up for the Raspberry Pi 4 
 - If the hardware is configured propperly you should see the LED Display propt you to connect the iOS app
