@@ -6,13 +6,14 @@
 <img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/1f8c8b90-3964-40ef-b4b5-e148caa803fe" alt="IMG_0584" width="300" height="200">
 <img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/7fb41a0d-764e-4189-bd65-df001cf257da" alt="IMG_0584" width="300" height="200">
 <img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/0bf04dc4-fd7b-4d76-9d15-3d24ce158498" alt="IMG_0584" width="300" height="200">
-<img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/fff90604-6f77-404c-9fad-a8ef23ce79ab" alt="IMG_0584" width="300" height="200">
 <img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/5357fde8-a1d5-40a6-84a5-42ef1514189a" alt="IMG_0584" width="300" height="200">
 
 # 3D Printer Files
 - It may be a good idea to initiate the print before completing the tutorials. Print time is roughly 6.5 hours (Bambu Labs P1S)
 - Files:
-  - 
+
+# iOS App
+- Link
 
 # Hardware Set-Up
 - This page provides detailed instructions on how to propperly connect the bonnet to either the Raspberry Pi 4 or the RaspBerry Pi Zero 2 as well as connecting the bonnet to the LED Matrix.
