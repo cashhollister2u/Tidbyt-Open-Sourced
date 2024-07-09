@@ -119,6 +119,8 @@
 - To turn off the board use the power button in the iOS app
   - To be safe look through the vent holes in the back for the green light to stop flashing on the Raspberry Pi
 - WARNING: If the board is unpluged without using the iOS app it may corrupt the files.
+- WARNING: Spotify Updates every 8 seconds (this is for program stability) / Song titles DO NOT scroll (this is for album cover image stability)
+- NOTE: If anyone actually uses this I can post an update fixing the Warnings above. 
 
 # Hardware List (Raspberry Pi 4)
 - Raspbery Pi 4
