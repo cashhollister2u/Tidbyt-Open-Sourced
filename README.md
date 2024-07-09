@@ -111,7 +111,7 @@
 - Click "Show" next to the Spotify Auth
 - Click "Authenticate"
 - Click "Home" on the app display and select one fo the four display options
-  - Ensure Spotify is currently playing. Otherwise the screen may display an error.
+  - If selecting "Spotify" ensure Spotify is currently playing. Otherwise the screen may display an error.
  
 ## Basic Operation:
 - Plug in the board to turn on
