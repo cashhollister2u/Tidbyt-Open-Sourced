@@ -32,6 +32,7 @@
 - Raspbery Pi 4
 - Raspbery Pi 4 hdmi cable
 - 32 gb Micro SD Card for Raspberry Pi
+- gpio extention
 - IPhone (used for LED Board controller)
 - Monitor (edit 2 files on Raspberry Pi)
 - KeyBoard (edit 2 files on Raspberry Pi)
