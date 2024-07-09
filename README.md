@@ -1,6 +1,15 @@
 # Led Board and Application Set-Up
 
 ## Required Hardware Refrenced at the Bottom
+<img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/8d0cddf8-83f3-448e-90b9-70a758afb57e" alt="IMG_0584" width="300" height="200">
+<img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/bb6920f6-ff4d-49ce-815f-a3bd049cfb54" alt="IMG_0584" width="300" height="200">
+<img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/1f8c8b90-3964-40ef-b4b5-e148caa803fe" alt="IMG_0584" width="300" height="200">
+<img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/7fb41a0d-764e-4189-bd65-df001cf257da" alt="IMG_0584" width="300" height="200">
+<img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/0bf04dc4-fd7b-4d76-9d15-3d24ce158498" alt="IMG_0584" width="300" height="200">
+<img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/fff90604-6f77-404c-9fad-a8ef23ce79ab" alt="IMG_0584" width="300" height="200">
+<img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/5357fde8-a1d5-40a6-84a5-42ef1514189a" alt="IMG_0584" width="300" height="200">
+
+
 
 ## Sign-Up For Free API Services:
 - All api services provided by the led application utilize the free trials of the following. 
@@ -20,11 +29,17 @@
 ## Download Raspberry Pi Imager
 - https://www.raspberrypi.com/software/
 
-## RaspBerry Pi Set-Up
+## RaspBerry Pi 4 Set-Up
 ### STEP 1:
 - Insert Micro SD into computer
+- Open Raspberry Pi imager
 
-
+## STEP 2:
+- Select Raspberry Pi 4
+- Click on "Choose OS"
+- Select "Use Custom"
+- Download the custom image from here:
+  -
 
 
 
