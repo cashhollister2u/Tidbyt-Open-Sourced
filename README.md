@@ -106,7 +106,7 @@
 ## That completes the software set up for the Raspberry Pi 4 
 - If the hardware is configured propperly you should see the LED Display propt you to connect the iOS app
 
-### Hardware List (Raspberry Pi 4)
+# Hardware List (Raspberry Pi 4)
 - Raspbery Pi 4
   - https://www.adafruit.com/product/4296
 - Raspbery Pi 4 hdmi cable
