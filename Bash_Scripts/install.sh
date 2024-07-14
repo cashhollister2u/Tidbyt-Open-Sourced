@@ -85,6 +85,29 @@ sudo systemctl enable led_app.service
 sudo systemctl start led_app.service
 echo "led_app.service has been started and enabled to start on boot"
 
+# input api keys into api_keys.py
+# Prompt the user for Spotify inputs
+read -p "Enter your Spotify Client ID: " spotify_client_id
+read -p "Enter your Spotify Client Secret: " spotify_client_secret
+
+# Prompt the user for Twelve Data API key
+read -p "Enter your Twelve Data API Key: " twelve_api_key
+
+# Prompt the user for OpenWeatherMap API key
+read -p "Enter your OpenWeatherMap API Key: " weather_api_key
+
+# Path to the api_keys.py file
+API_KEYS_FILE="/home/led_app/Led_App_Prod/Secrets/api_keys.py"
+
+# Insert the inputs into the api_keys.py file using sed
+sed -i "s|CLIENT_ID = \"\"|CLIENT_ID = \"$spotify_client_id\"|" $API_KEYS_FILE
+sed -i "s|CLIENT_SECRET = \"\"|CLIENT_SECRET = \"$spotify_client_secret\"|" $API_KEYS_FILE
+sed -i "s|TWELVE_API_KEY = \"\"|TWELVE_API_KEY = \"$twelve_api_key\"|" $API_KEYS_FILE
+sed -i "s|WEATHER_API_KEY = \"\"|WEATHER_API_KEY = \"$weather_api_key\"|" $API_KEYS_FILE
+
+echo "API keys have been set in $API_KEYS_FILE."
+
 # download adafruit matrix driver
 curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/main/rgb-matrix.sh >rgb-matrix.sh
 sudo bash rgb-matrix.sh
+
