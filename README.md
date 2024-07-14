@@ -1,4 +1,5 @@
 # Led Board and Application Set-Up
+## Disclaimer: SSH or remote access us utilized to edit and install files on the Raspberry Pi. It is up to the user to configure the security setting to meet their specific needs.
 
 ## Required Hardware Refrenced at the Bottom
 <img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/8d0cddf8-83f3-448e-90b9-70a758afb57e" alt="IMG_0584" width="300" height="200">
@@ -18,6 +19,7 @@
 # Hardware Set-Up
 - This page provides detailed instructions on how to propperly connect the bonnet to either the Raspberry Pi 4 or the RaspBerry Pi Zero 2 as well as connecting the bonnet to the LED Matrix.
   - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/driving-matrices
+
 
 
 
