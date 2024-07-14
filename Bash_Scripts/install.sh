@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # alter permissions to write and read to error log
-chmod 666 error_log.txt
+chmod 666 /home/led_app/Led_App_Prod/Error_Logs/error_log.txt
 echo "changed permissions on error log file"
 
 # alter permissions for writing and reading token file 
-chmod 666 spotify_refresh_token.json
+chmod 666 /home/led_app/Led_App_Prod/Secrets/spotify_refresh_token.json
 echo "changed permissions on spotify refresh token file"
 
 # make the off command executable
-chmod +x off_command.py
+chmod +x /home/led_app/Led_App_Prod/Bash_Scripts/off_command.py
 echo " off command file is now executable"
 
 # change sudoers file to allow for shutdown w/out password
