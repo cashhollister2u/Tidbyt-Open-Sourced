@@ -14,11 +14,14 @@
 - Files:
 
 # iOS App
-- Link
+- Currently in Beta ***
+- Download TestFlight from the iOS store
+- Email LED_APP_Controller@gmail.com with your icloud email and I can authorize the download.
 
 # Hardware Set-Up
 - Pre-Made Button for On/Off switch (optional)
-- [amazon](https://www.amazon.com/Twidec-Normal-Momentary-Pre-soldered-PBS-110-XR/dp/B07RV1D98T/ref=sr_1_2?dib=eyJ2IjoiMSJ9.cc92CYD6puREW-x_KclpTxxF9dJcV70bwpHP-jv-Wn2_PPcrELPjwRkWQH12hJr2dz5d-kDj8Gqh3-SzwORFMF7KfkKKUL8Gr94a0AC91_Qm8w9eVfvEArO9o3QgMDzNxYQhj0qf56dxpL16K72le_0ZEBwkry7Zh9IWC3ZaSD_FYDiE5sCKnJWk8Xk_RDVnh1xd3hJFhQKd1CObGwGfsE0Od-4hqoPX3EcL7heuV00.3lw6QoZoAzrgV8Qc4Dn2bHNZNRAPMQfgz7cn0diES90&dib_tag=se&keywords=Raspberry%2BPi%2BPower%2BButton&qid=1720996822&sr=8-2&th=1)
+  - [amazon](https://www.amazon.com/Twidec-Normal-Momentary-Pre-soldered-PBS-110-XR/dp/B07RV1D98T/ref=sr_1_2?dib=eyJ2IjoiMSJ9.cc92CYD6puREW-x_KclpTxxF9dJcV70bwpHP-jv-Wn2_PPcrELPjwRkWQH12hJr2dz5d-kDj8Gqh3-SzwORFMF7KfkKKUL8Gr94a0AC91_Qm8w9eVfvEArO9o3QgMDzNxYQhj0qf56dxpL16K72le_0ZEBwkry7Zh9IWC3ZaSD_FYDiE5sCKnJWk8Xk_RDVnh1xd3hJFhQKd1CObGwGfsE0Od-4hqoPX3EcL7heuV00.3lw6QoZoAzrgV8Qc4Dn2bHNZNRAPMQfgz7cn0diES90&dib_tag=se&keywords=Raspberry%2BPi%2BPower%2BButton&qid=1720996822&sr=8-2&th=1)
+- If utilizing the button it must be soldered to the "SCL" and "GND" pins of the Matrix Bonnet. The orintation of the wires does not matter.
 - This page provides detailed instructions on how to propperly connect the bonnet to either the Raspberry Pi 4 or the RaspBerry Pi Zero 2 as well as connecting the bonnet to the LED Matrix.
   - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/driving-matrices
 - 
