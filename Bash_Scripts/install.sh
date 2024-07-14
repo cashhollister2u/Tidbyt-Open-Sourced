@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # alter permissions to write and read to error log
 chmod 666 error_log.txt
 echo "changed permissions on error log file"
@@ -38,6 +37,25 @@ else
     echo "isolcpus=3 added to $CMDLINE_FILE"
 fi
 
+# Append button functionality to /boot/firmware/config.txt for ON/OFF Switch
+CONFIG_FILE="/boot/firmware/config.txt.txt"
+if grep -q "dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up" $CONFIG_FILE; then
+    echo "dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up is already present in $CONFIG_FILE"
+else
+    echo "Appending dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up to $CONFIG_FILE"
+    echo "dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up" | sudo tee -a $CONFIG_FILE > /dev/null
+    echo "dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up added to $CONFIG_FILE"
+fi
+
+# Create and configure shutdown file via GPIO
+OFF_SWITCH_FILE="/etc/udev/rules.d/99-gpio-power.rules" # path to file
+sudo tee $OFF_SWITCH_FILE > /dev/null <<EOL # write the following to said file
+ACTION!="REMOVE", SUBSYSTEM=="input", KERNEL=="event*", \
+SUBSYSTEMS=="platform", DRIVERS=="gpio-keys", \
+ATTRS{keys}=="116", TAG+="power-switch"
+EOL
+echo "OFF SWITCH file created at $OFF_SWITCH_FILE"
+
 # Create and configure the led_app.service file
 SERVICE_FILE="/etc/systemd/system/led_app.service" # path to systemctl file
 sudo tee $SERVICE_FILE > /dev/null <<EOL # write the following to said file
@@ -70,6 +88,3 @@ echo "led_app.service has been started and enabled to start on boot"
 # download adafruit matrix driver
 curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/main/rgb-matrix.sh >rgb-matrix.sh
 sudo bash rgb-matrix.sh
-
-# run demo file to test board
-sudo ./demo -D0 --led-rows=32 --led-cols=64
