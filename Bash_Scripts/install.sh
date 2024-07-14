@@ -15,8 +15,7 @@ echo " off command file is now executable"
 # change sudoers file to allow for shutdown w/out password
 SUDOERS_TEMP_FILE="/tmp/sudoers.temp"
 echo "ALL ALL=NOPASSWD: /sbin/shutdown" | sudo tee -a $SUDOERS_TEMP_FILE > /dev/null # write command to temp file
-sudo visudo -cf $SUDOERS_TEMP_FILE && sudo cp $SUDOERS_TEMP_FILE /etc/sudoers.d/ # if format is correct copy it to the sudoers dir
-shutdown_nopasswd # name of file
+sudo visudo -cf $SUDOERS_TEMP_FILE && sudo cp $SUDOERS_TEMP_FILE /etc/sudoers.d/shutdown_nopasswd # if format is correct copy it to the sudoers dir
 echo "Sudoers file updated to allow shutdown without password"
 
 # turn off sound module
