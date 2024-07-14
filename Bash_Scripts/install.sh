@@ -38,7 +38,7 @@ else
 fi
 
 # Append button functionality to /boot/firmware/config.txt for ON/OFF Switch
-CONFIG_FILE="/boot/firmware/config.txt.txt"
+CONFIG_FILE="/boot/firmware/config.txt"
 if grep -q "dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up" $CONFIG_FILE; then
     echo "dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up is already present in $CONFIG_FILE"
 else
@@ -50,9 +50,9 @@ fi
 # Create and configure shutdown file via GPIO
 OFF_SWITCH_FILE="/etc/udev/rules.d/99-gpio-power.rules" # path to file
 sudo tee $OFF_SWITCH_FILE > /dev/null <<EOL # write the following to said file
-ACTION!="REMOVE", SUBSYSTEM=="input", KERNEL=="event*", \
-SUBSYSTEMS=="platform", DRIVERS=="gpio-keys", \
-ATTRS{keys}=="116", TAG+="power-switch"
+ACTION!=\"REMOVE\", SUBSYSTEM==\"input\", KERNEL==\"event*\", \\
+SUBSYSTEMS==\"platform\", DRIVERS==\"gpio-keys\", \\
+ATTRS{keys}==\"116\", TAG+=\"power-switch\"
 EOL
 echo "OFF SWITCH file created at $OFF_SWITCH_FILE"
 
