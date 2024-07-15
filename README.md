@@ -14,6 +14,7 @@
 
 # 3D Printer Files
 - ALL parts were printed in Overture PETG | 0.4 nozzel | Bambu PETG Basic Filiment Profile | using a Bambu Labs P1S
+- The Screen Cover is printed in White PETG. This is the best color for diffusing the light of the LED Matrix.
 - It may be a good idea to initiate the print before completing the Hardware/Software tutorials. Print time is roughly 6.5 hours (Bambu Labs P1S)
 - Slicer Settings (Bambu Studio):
   - For the "Main Body" perform a "cut" at y=20 and isolate the mounting platform for the Pi.
@@ -22,7 +23,10 @@
     - Depth ratio = 2.50mm / Size = 2.00mm (connector settings)
   - I had issues printing the platform and the main body at the same time. I recommend deleting the platform, printing the main body, and then reverting the change after the print to regain access to the platform with the snap holes.
   - The Main Body, Platform cut piece, and Button Cap were prited using "0.28mm Extra Draft @BBL X1C"
-  - The Screen Cover was printed using "*0.08mm Extra Fine @BBL X1C" will all "Initial Layer Speeds" set to 50mm/s amd all "Other Layers Speeds" set to 50mm/s. Additionally the "Initial layer height" and "Layer height" were set to 0.1mm. 
+  - The Screen Cover was printed using "*0.08mm Extra Fine @BBL X1C" will all "Initial Layer Speeds" set to 50mm/s amd all "Other Layers Speeds" set to 50mm/s. Additionally the "Initial layer height" and "Layer height" were set to 0.1mm.
+- It is recommended to wait for parts to cool down to room temp before attempting to assemble.
+  - ie. The LED Matrix panel is press fit to the main body.
+  - The board is a tight fit so take your time with its assembly. 
 
 # iOS App
 - Currently in Beta ***
