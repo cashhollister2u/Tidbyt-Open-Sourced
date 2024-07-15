@@ -19,13 +19,13 @@
 # iOS App
 - Currently in Beta ***
 - Download TestFlight from the iOS store
-- Email LED_APP_Controller@gmail.com with your icloud email and I can authorize the download.
+- Email ledappcontroller@gmail.com with your icloud email and I can authorize the download.
 
 # Hardware Set-Up
 - Pre-Made Button for On/Off switch (optional)
   - [amazon](https://www.amazon.com/Twidec-Normal-Momentary-Pre-soldered-PBS-110-XR/dp/B07RV1D98T/ref=sr_1_2?dib=eyJ2IjoiMSJ9.cc92CYD6puREW-x_KclpTxxF9dJcV70bwpHP-jv-Wn2_PPcrELPjwRkWQH12hJr2dz5d-kDj8Gqh3-SzwORFMF7KfkKKUL8Gr94a0AC91_Qm8w9eVfvEArO9o3QgMDzNxYQhj0qf56dxpL16K72le_0ZEBwkry7Zh9IWC3ZaSD_FYDiE5sCKnJWk8Xk_RDVnh1xd3hJFhQKd1CObGwGfsE0Od-4hqoPX3EcL7heuV00.3lw6QoZoAzrgV8Qc4Dn2bHNZNRAPMQfgz7cn0diES90&dib_tag=se&keywords=Raspberry%2BPi%2BPower%2BButton&qid=1720996822&sr=8-2&th=1)
 - If utilizing the button it must be soldered to the "SCL" and "GND" pins of the Matrix Bonnet. The orientation of the wires does not matter. (optional)
-<img src="https://github.com/user-attachments/assets/fcf34ac5-c3ea-4da0-820d-abdcc2f5171a" alt="IMG_0584" width="300" height="200">
+- <img src="https://github.com/user-attachments/assets/fcf34ac5-c3ea-4da0-820d-abdcc2f5171a" alt="IMG_0584" width="300" height="200">
 - For best quality solder pin 4 and pin 18 with a jumper wire. (Further details and pictures in the link below) (optional)
 - It is reccomended to complete all soldering before connecting the Raspberry Pi to the Matrix Bonnet.
 - It is reccomended to attach the pi to the 3D printed mounting platform before proceeding.
@@ -33,6 +33,7 @@
   - 4 M2 nuts are placed on top to act as a spacer between the Raspberry Pi and the mounting platform
   - The 4 corners of the Raspberry Pi each rest on top of 2 M2 nuts
   - A brass spacer is threaded through the board and the 2 M2 nuts securing the corner in place (REPEAT for the other 3 corners)
+- NOTE: For this use case the PI and the Matrix Bonnet are both powered by the 5V 10amp charger. (unlike the AdaFruit instructions below)
 - This page provides detailed instructions on how to propperly connect the bonnet to either the Raspberry Pi 4 or the RaspBerry Pi Zero 2 as well as connecting the bonnet to the LED Matrix.
   - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/driving-matrices
 
@@ -116,11 +117,12 @@
   - If selecting "Spotify" ensure Spotify is currently playing. Otherwise the screen may display an error.
  
 ## Basic Operation:
-- Plug in the board to turn on or press the optional physical button
-- To connect select one of the 4 displays in the iOS app when the screen prompts you to "connect to iOS"
-- To turn off the board use the power button in the iOS app or optional physical button
-  - To be safe look through the vent holes in the back for the green light to stop flashing on the Raspberry Pi
-- WARNING: If the board is unpluged without using the iOS app it may corrupt the files.
+- Plug in the board to turn on or press the (optional) physical button
+- The board may take 30s to 1min to boot and prompt a connection
+- To connect, select one of the 4 displays in the iOS app when the LED Matrix prompts you to "connect to iOS"
+- To turn off the board use the power button in the iOS app or (optional) physical button
+  - To be safe look through the vent holes in the back for the green light to stop flashing on the Raspberry Pi (The Matrix Bonnet has a green light that will remain lit)
+- WARNING: If the board is unpluged without using the iOS app / physical button it may corrupt the files.
 - WARNING: Spotify Updates every 8 seconds (this is for program stability) / Song titles DO NOT scroll (this is for album cover image stability)
 - NOTE: If anyone actually uses this I can post an update fixing the Warnings above. 
 
@@ -170,3 +172,4 @@
 - Solder Iron / Jumper Wire (This can be skipped but reduces quality) (Would also have to reinstall the bonnet library refer to above instructions)
 - Access to 3D Printer (for housing)
 - Small Skrew Driver
+- A micro usb charger may be usefull for debugging hardware but not required 
