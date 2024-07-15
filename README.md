@@ -114,12 +114,6 @@
 - Click "Authenticate"
 - Click "Home" on the app display and select one fo the four display options
   - If selecting "Spotify" ensure Spotify is currently playing. Otherwise the screen may display an error.
-
-## Debugging Hardware / Software
-- If the board displays lights but does not appear as expected or jumbled first follow the steps here:
-  - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/help
-- If chosen to take the soldering approach re-check solder connections between the pi zero 2 and the gpio pins.
-  - 
  
 ## Basic Operation:
 - Plug in the board to turn on or press the optional physical button
@@ -130,8 +124,29 @@
 - WARNING: Spotify Updates every 8 seconds (this is for program stability) / Song titles DO NOT scroll (this is for album cover image stability)
 - NOTE: If anyone actually uses this I can post an update fixing the Warnings above. 
 
-# Hardware List (Raspberry Pi 4)
-- Raspbery Pi Zero 2
+## Debugging Hardware / Software
+- If the board displays lights but does not appear as expected or jumbled, first follow the steps here:
+  - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/help
+- If chosen to take the soldering approach re-check solder connections between the pi zero 2 and the gpio pins.
+- Continuity Test (LED Method) (I'm sure there is a better method)
+  - First remove the Matrix Bonnet and ensure nothing is connected to the GPIO Pins.
+  - Assemble a circuit utilizing an led and a 33 ohm resistor
+  - <img src="https://github.com/user-attachments/assets/49c3d4c7-943d-475e-ba8f-c8a3ca3559d8" alt="IMG_0584" width="300" height="200">"
+  - The yellow wire stay connected as in the image (ground)
+  - the blue is connected to the pin being tested
+  - Pin refrence here - https://pinout.xyz
+  - I recommend testing the control, address, and color pins refrenced here - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/pinouts
+  - Locate the test_pins.py file in the Led_App_Prod" directory
+  - With the ground (yellow) connected to ground and the positive (blue) connected to the pin being tested run the python script.
+  - You will be prompted to enter the pin you are testing
+  - If the connection is good the led will flash red once
+- If the continuity test is successfull and the image is only partially distorted diagnose the issue based on the pin functionality description here - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/pinouts
+  - ie. Pi GPIO #16 - Matrix G2 (Green row2) pin: This pin controls the green LEDs on the bottom half of the display
+  - Then re-affirm the solder conenction at that pin
+ 
+
+# Hardware List (Raspberry Pi Zero 2) (Hardware for other pi variants may be different)
+- Raspbery Pi Zero 2 
   - [https://www.adafruit.com/product/4296](https://www.adafruit.com/product/5291)
 - GPIO header pins (solderless) (OPTION 1)
   - https://www.adafruit.com/product/3662?gad_source=1&gbraid=0AAAAADx9JvQF9r4jQa4XoDPi65FgIZNb-&gclid=EAIaIQobChMI4IuM2eWnhwMVJ25_AB0yUQ59EAQYASABEgJf4_D_BwE
