@@ -1,5 +1,8 @@
 # Led Board and Application Set-Up
-## Disclaimer: SSH or remote access us utilized to edit and install files on the Raspberry Pi. It is up to the user to configure the security setting to meet their specific needs.
+
+# add assembly images and 3d files link
+
+### Disclaimer: SSH or remote access us utilized to edit and install files on the Raspberry Pi. It is up to the user to configure the security setting to meet their specific needs.
 
 ## Required Hardware Refrenced at the Bottom
 <img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/8d0cddf8-83f3-448e-90b9-70a758afb57e" alt="IMG_0584" width="300" height="200">
@@ -21,7 +24,15 @@
 # Hardware Set-Up
 - Pre-Made Button for On/Off switch (optional)
   - [amazon](https://www.amazon.com/Twidec-Normal-Momentary-Pre-soldered-PBS-110-XR/dp/B07RV1D98T/ref=sr_1_2?dib=eyJ2IjoiMSJ9.cc92CYD6puREW-x_KclpTxxF9dJcV70bwpHP-jv-Wn2_PPcrELPjwRkWQH12hJr2dz5d-kDj8Gqh3-SzwORFMF7KfkKKUL8Gr94a0AC91_Qm8w9eVfvEArO9o3QgMDzNxYQhj0qf56dxpL16K72le_0ZEBwkry7Zh9IWC3ZaSD_FYDiE5sCKnJWk8Xk_RDVnh1xd3hJFhQKd1CObGwGfsE0Od-4hqoPX3EcL7heuV00.3lw6QoZoAzrgV8Qc4Dn2bHNZNRAPMQfgz7cn0diES90&dib_tag=se&keywords=Raspberry%2BPi%2BPower%2BButton&qid=1720996822&sr=8-2&th=1)
-- If utilizing the button it must be soldered to the "SCL" and "GND" pins of the Matrix Bonnet. The orintation of the wires does not matter.
+- If utilizing the button it must be soldered to the "SCL" and "GND" pins of the Matrix Bonnet. The orientation of the wires does not matter. (optional)
+  - <img src="https://github.com/user-attachments/assets/fcf34ac5-c3ea-4da0-820d-abdcc2f5171a" alt="IMG_0584" width="300" height="200">
+- For best quality solder pin 4 and pin 18 with a jumper wire. (Further details and pictures in the link below) (optional)
+- It is reccomended to complete all soldering before connecting the Raspberry Pi to the Matrix Bonnet.
+- It is reccomended to attach the pi to the 3D printed mounting platform before proceeding.
+  - 4 M2 nuts are press fit into the mouniting platform
+  - 4 M2 nuts are placed on top to act as a spacer between the Raspberry Pi and the mounting platform
+  - The 4 corners of the Raspberry Pi each rest on top of 2 M2 nuts
+  - A brass spacer is threaded through the board and the 2 M2 nuts securing the corner in place (REPEAT for the other 3 corners)
 - This page provides detailed instructions on how to propperly connect the bonnet to either the Raspberry Pi 4 or the RaspBerry Pi Zero 2 as well as connecting the bonnet to the LED Matrix.
   - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/driving-matrices
 - 
@@ -50,99 +61,89 @@
 
 ## RaspBerry Pi 4 Set-Up (Software)
 ### STEP 1:
-- Download the custom image from here:
-  - https://www.dropbox.com/scl/fi/tlmi47h2n2p46aot2ipix/Raspi_Led_App_v4.img.zip?rlkey=r1qr4sp8x33adcpea82q7anmc&st=849psice&dl=0
 - Insert Micro SD into computer
 - Open Raspberry Pi imager
 
 ## STEP 2:
 - Click on "Choose Device"
-- Select Raspberry Pi 4
+- Select Raspberry Pi Zero 2 
 - Click on "Choose OS"
-- Select "Use Custom"
-- Select Raspi_Led_app_v4.img
+- Select Raspberry Pi OS (Other) 
+- Select Raspberry Pi OS Lite (32-bit)
 - Click on "Choose Storage"
 - Select Micros SD
 - Click "Next"
-- Click "No" (don’t use custom settings)
-- Click "YES"
+- Click "EDIT Settings"
+- Select General
+- Set Hostname: “LedApp”.local (IMPORTANT)
+- Set username: “led_app” (IMPORTANT)
+- Set password: Your Choice
+- Configure wifi
+- Select Services
+- Enable SSH
+- Enable Password or Public-Key Auth
+- Click Save
+- Click "YES" (use custom settings)
+- Click "YES" (erase previous data)
 - Wait for install to complete
 
 ## STEP 3:
 - Unplug Micro sd and insert into Raspberry Pi  (Ensure Pi is off)
-- Plug Raspberry Pi 4 into monitor via hdmi
-- Turn on Raspberry Pi 4
-- (Pi may cycle through a initial boot and reboot for the first boot cycle)
+- Turn on Raspberry Pi
+- To test if the Raspberry Pi is accepting a connection run the following in you computer's terminal/command prompt:
+  - "ping LedApp.local" 
+- Pi will cycle through a initial boot and reboot for the first boot cycle if it takes longer than 5 minutes to get a responce repeat steps 1 and 2 data may be corrupted
+- Gain remote access to the Raspberry Pi:
+  - “ssh led_app@LedApp.local”
+- Run the following commands after gaining access and logging into the Raspberry Pi:
+  - "sudo apt update" (update available software)
+  - "sudo apt install git" (needed for the "git clone" command)
+  - "git clone https://github.com/cashhollister2u/Led_App_Prod.git" (download this repository)
+  - "sudo ./Led_App_Prod/Bash_Scripts/install.sh" (refer to "Bash_Scripts/install.sh")
+- Follow the prompts that the terminal displays
+- Have the api keys associated with the accounts you created. You will be prompted for them.
+- When prompted to reboot select "y" or yes for changes to take effect.
 
-## STEP 4:
-- The Pi will boot into a terminal screen
-- Log in using pre set credentials:
-  - username: “led_app"
-  - password: "led_app”
-- Connect to WiFi: (note I was unable to connect to my iPhone hot spot if that is giving you trouble)
-  - Type the following command into the terminal "sudo raspi-config"
-  - Click "enter" on "System Options"
-  - Click "enter" on "S1 Wireless LAN"
-  - Use down arrow to select your country and click "enter"
-  - Click "enter" on "OK" to confirm
-  - Type SSID (WiFi name) into text input
-  - Use "Tab" to select "OK" and click "enter"
-  - Next enter your WiFi password into the passphrase text input
-  - Use "Tab" again and click "enter"
-  - Wait till back on main config menu
-  - Click "Tab" twice to select "Finish" and click "enter"
-  - The screen may look frozen but the input bar is at the bottom just type “clear” and click "enter"
 
-## STEP 5:
-- Connect Api Keys from the free accounts you created:
-  - Type the following command into the terminal “sudo nano /home/led_app/Led_App_Prod/Secrets/api_keys.py"
-  - Ensure the file contains text information and that it is not blank (if blank check your command for typos)
-  - Type in the Api Keys from the free accounts you created between the provide quotes
-  - Save by clicking “CTRL + x” then “y” then “Enter”
-  - The screen may look frozen but the input bar is at the bottom just type “clear” and click "enter"
-- Type the following command into the terminal “sudo reboot -h now” (reboots / device boot can take 30s - 60s)
-
-## STEP 6: (Optional ONLY if you are skipping the soldering in the hardware set-up)
-- Type the following commands into the terminal:
-  - "cd"
-  - "sudo bash rgb-matrix.sh"
-  - All this does is replace the current “rpi-rgb-led-matrix” directory
-  - Then follow the prompts
-    - Refer to "Step 6" in this link if you have isses : https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/driving-matrices
-  - When prompted choose “convenience” instead of "quality"
-
-## That completes the software set up for the Raspberry Pi 4 
+## That completes the software set up for the Raspberry Pi 
 - If the hardware is configured propperly you should see the LED Display propt you to connect the iOS app
-- Download the app from the iOS store
+- Download the app from TestFlight 
 - Open the app
 - Click "Settings"
 - Click "Show" next to the Spotify Auth
 - Click "Authenticate"
 - Click "Home" on the app display and select one fo the four display options
   - If selecting "Spotify" ensure Spotify is currently playing. Otherwise the screen may display an error.
+
+## Debugging Hardware / Software
+- If the board displays lights but does not appear as expected or jumbled first follow the steps here:
+  - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/help
+- If chosen to take the soldering approach re-check solder connections between the pi zero 2 and the gpio pins.
+  - 
  
 ## Basic Operation:
-- Plug in the board to turn on
+- Plug in the board to turn on or press the optional physical button
 - To connect select one of the 4 displays in the iOS app when the screen prompts you to "connect to iOS"
-- To turn off the board use the power button in the iOS app
+- To turn off the board use the power button in the iOS app or optional physical button
   - To be safe look through the vent holes in the back for the green light to stop flashing on the Raspberry Pi
 - WARNING: If the board is unpluged without using the iOS app it may corrupt the files.
 - WARNING: Spotify Updates every 8 seconds (this is for program stability) / Song titles DO NOT scroll (this is for album cover image stability)
 - NOTE: If anyone actually uses this I can post an update fixing the Warnings above. 
 
 # Hardware List (Raspberry Pi 4)
-- Raspbery Pi 4
-  - https://www.adafruit.com/product/4296
-- Raspbery Pi 4 hdmi cable
-  - [Amazon](https://www.amazon.com/UGREEN-Adapter-Ethernet-Compatible-Raspberry/dp/B06WWQ7KLV/ref=sr_1_2_sspa?crid=1TJVR5LOR0ZVQ&dib=eyJ2IjoiMSJ9.mG7d4qh54EEt0ySlw3Qox8Fider4Fqa4TIJ4RvVTUT8RibE054g-2Olxoj0AVMYhcq4W_dbP6ksV4vGkveEgQnM8y23nU_Jysm-nVsRY8-R85reSgPzhdH1hFb_-AvIKrVAUydInu-pvDdsV2PWPyuEEhS_70bPaIZawUehITPM6M6uhSucYKBg0H9AlbjSAAfnLRG_TGcCHtlmnjjMzI59GLkjpOgbFhtT_raRf4xI._pB6ebddXfmq2JEhPSYQ13dGDaIlRoy-J01Dnrcdsx0&dib_tag=se&keywords=raspberry%2Bpi%2B4%2Bhdmi%2Bcable&qid=1720499082&sprefix=raspberry%2Bpi%2B4%2Bhdmi%2Bcable%2Caps%2C134&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1)
-- 32 gb Micro SD Card for Raspberry Pi
+- Raspbery Pi Zero 2
+  - [https://www.adafruit.com/product/4296](https://www.adafruit.com/product/5291)
+- GPIO header pins (solderless) (OPTION 1)
+  - https://www.adafruit.com/product/3662?gad_source=1&gbraid=0AAAAADx9JvQF9r4jQa4XoDPi65FgIZNb-&gclid=EAIaIQobChMI4IuM2eWnhwMVJ25_AB0yUQ59EAQYASABEgJf4_D_BwE
+- GPIO header pins (soldering req) (OPTION 2)
+  - https://www.adafruit.com/product/2822
+- 16 or 32 gb Micro SD Card for Raspberry Pi
   - [Amazon](https://www.amazon.com/SanDisk-Ultra-microSDXC-Memory-Adapter/dp/B073JWXGNT/ref=sr_1_8?crid=3BA0SAU4Z3BVC&dib=eyJ2IjoiMSJ9.gma2hVfUgy-OBJ-COHM6pbshqICnhWgymisufu6qkTikGx9DMDOT-3dc7naXHtt0GM5F7Dc-Kzp8nmsDFj5eZRuSTCXBZHiIuxiikhiAopv-ALnQMJtZZVEZLa4dxi8Tr1MkCnvShyoG4zFOWRbtyg1_XfMy-BaL2RcxbW6T4j0bIq9oyaprOGw9gEz1MJSrd4Xhy54847gErjsLfFbm8xlkS_w2olOighTBk9fXdI329hnd6R0Gkh-Ykuode-GpM0Fs1ZgVM-bJ4eExbhLlgDixoFgMeH63-s7JflFici0.Aj76Y7zJJKxqQMwN3vLCvcBD0_9C8W23b6iYM99UH6c&dib_tag=se&keywords=32+gb+micro+sd&qid=1720498866&s=electronics&sprefix=32+gb+micro+sd%2Celectronics%2C131&sr=1-8)
-
-- gpio extention
+- gpio extention (optional)
   - https://www.adafruit.com/product/2223?gad_source=1&gbraid=0AAAAADx9JvRoR7oa6Xt2MOaaaoUYxxSop&gclid=CjwKCAjwnK60BhA9EiwAmpHZw2OqCtdnE_kqISjUMuYMXSpIDnCF-1EZaFNnZ6MPz9KHeC91vC1JABoCNKQQAvD_BwE
+- Pre-Made Button for On/Off switch (optional)
+  - [amazon](https://www.amazon.com/Twidec-Normal-Momentary-Pre-soldered-PBS-110-XR/dp/B07RV1D98T/ref=sr_1_2?dib=eyJ2IjoiMSJ9.cc92CYD6puREW-x_KclpTxxF9dJcV70bwpHP-jv-Wn2_PPcrELPjwRkWQH12hJr2dz5d-kDj8Gqh3-SzwORFMF7KfkKKUL8Gr94a0AC91_Qm8w9eVfvEArO9o3QgMDzNxYQhj0qf56dxpL16K72le_0ZEBwkry7Zh9IWC3ZaSD_FYDiE5sCKnJWk8Xk_RDVnh1xd3hJFhQKd1CObGwGfsE0Od-4hqoPX3EcL7heuV00.3lw6QoZoAzrgV8Qc4Dn2bHNZNRAPMQfgz7cn0diES90&dib_tag=se&keywords=Raspberry%2BPi%2BPower%2BButton&qid=1720996822&sr=8-2&th=1)
 - IPhone (used for LED Board controller)
-- Monitor (edit 2 files on Raspberry Pi)
-- KeyBoard (edit 2 files on Raspberry Pi) (must use usb)
 - Adafruit Matrix Bonnet
   - https://www.adafruit.com/product/3211
 - 32 X 64 3mm pitch LED Matrix (Ive found that 3mm is best for Desktop Visibility) (3D files built to support 3mm pitch)
