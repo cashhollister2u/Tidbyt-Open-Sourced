@@ -13,8 +13,16 @@
 <img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/5357fde8-a1d5-40a6-84a5-42ef1514189a" alt="IMG_0584" width="300" height="200">
 
 # 3D Printer Files
-- It may be a good idea to initiate the print before completing the tutorials. Print time is roughly 6.5 hours (Bambu Labs P1S)
-- Files:
+- ALL parts were printed in Overture PETG | 0.4 nozzel | Bambu PETG Basic Filiment Profile | using a Bambu Labs P1S
+- It may be a good idea to initiate the print before completing the Hardware/Software tutorials. Print time is roughly 6.5 hours (Bambu Labs P1S)
+- Slicer Settings (Bambu Studio):
+  - For the "Main Body" perform a "cut" at y=20 and isolate the mounting platform for the Pi.
+  - Ensure the cut only selects the platform and not the walls of the main body.
+  - Add "Connectors" (Snap) on each of the 6 pillars that support the platform
+    - Depth ratio = 2.50mm / Size = 2.00mm (connector settings)
+  - I had issues printing the platform and the main body at the same time. I recommend deleting the platform, printing the main body, and then reverting the change after the print to regain access to the platform with the snap holes.
+  - The Main Body, Platform cut piece, and Button Cap were prited using "0.28mm Extra Draft @BBL X1C"
+  - The Screen Cover was printed using "*0.08mm Extra Fine @BBL X1C" will all "Initial Layer Speeds" set to 50mm/s amd all "Other Layers Speeds" set to 50mm/s. Additionally the "Initial layer height" and "Layer height" were set to 0.1mm. 
 
 # iOS App
 - Currently in Beta ***
