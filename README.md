@@ -2,7 +2,7 @@
 
 # add assembly images and 3d files link
 
-### Disclaimer: SSH or Remote Access is utilized to edit and install files on the Raspberry Pi. It is up to the user to configure the security setting to meet their specific needs.
+### Disclaimer: SSH or Remote Access is utilized to edit and install files on the Raspberry Pi. It is up to the user to configure the security settings to meet their specific needs.
 
 ## Required Hardware Refrenced at the Bottom
 <img src="https://github.com/cashhollister2u/Led_App_Prod/assets/153677541/8d0cddf8-83f3-448e-90b9-70a758afb57e" alt="IMG_0584" width="300" height="200">
