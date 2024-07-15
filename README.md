@@ -145,7 +145,7 @@
 - Continuity Test (LED Method) (I'm sure there is a better method)
   - First remove the Matrix Bonnet and ensure nothing is connected to the GPIO Pins.
   - Assemble a circuit utilizing an led and a 33 ohm resistor
-  - <img src="https://github.com/user-attachments/assets/49c3d4c7-943d-475e-ba8f-c8a3ca3559d8" alt="IMG_0584" width="300" height="200">"
+  - <img src="https://github.com/user-attachments/assets/49c3d4c7-943d-475e-ba8f-c8a3ca3559d8" alt="IMG_0584" width="300" height="200">
   - The yellow wire stay connected as in the image (ground)
   - the blue is connected to the pin being tested
   - Pin refrence here - https://pinout.xyz
