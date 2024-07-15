@@ -25,7 +25,7 @@
 - Pre-Made Button for On/Off switch (optional)
   - [amazon](https://www.amazon.com/Twidec-Normal-Momentary-Pre-soldered-PBS-110-XR/dp/B07RV1D98T/ref=sr_1_2?dib=eyJ2IjoiMSJ9.cc92CYD6puREW-x_KclpTxxF9dJcV70bwpHP-jv-Wn2_PPcrELPjwRkWQH12hJr2dz5d-kDj8Gqh3-SzwORFMF7KfkKKUL8Gr94a0AC91_Qm8w9eVfvEArO9o3QgMDzNxYQhj0qf56dxpL16K72le_0ZEBwkry7Zh9IWC3ZaSD_FYDiE5sCKnJWk8Xk_RDVnh1xd3hJFhQKd1CObGwGfsE0Od-4hqoPX3EcL7heuV00.3lw6QoZoAzrgV8Qc4Dn2bHNZNRAPMQfgz7cn0diES90&dib_tag=se&keywords=Raspberry%2BPi%2BPower%2BButton&qid=1720996822&sr=8-2&th=1)
 - If utilizing the button it must be soldered to the "SCL" and "GND" pins of the Matrix Bonnet. The orientation of the wires does not matter. (optional)
-  - <img src="https://github.com/user-attachments/assets/fcf34ac5-c3ea-4da0-820d-abdcc2f5171a" alt="IMG_0584" width="300" height="200">
+<img src="https://github.com/user-attachments/assets/fcf34ac5-c3ea-4da0-820d-abdcc2f5171a" alt="IMG_0584" width="300" height="200">
 - For best quality solder pin 4 and pin 18 with a jumper wire. (Further details and pictures in the link below) (optional)
 - It is reccomended to complete all soldering before connecting the Raspberry Pi to the Matrix Bonnet.
 - It is reccomended to attach the pi to the 3D printed mounting platform before proceeding.
@@ -35,7 +35,7 @@
   - A brass spacer is threaded through the board and the 2 M2 nuts securing the corner in place (REPEAT for the other 3 corners)
 - This page provides detailed instructions on how to propperly connect the bonnet to either the Raspberry Pi 4 or the RaspBerry Pi Zero 2 as well as connecting the bonnet to the LED Matrix.
   - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/driving-matrices
-- 
+
 
 
 
@@ -59,7 +59,7 @@
 ## Download Raspberry Pi Imager
 - https://www.raspberrypi.com/software/
 
-## RaspBerry Pi 4 Set-Up (Software)
+## RaspBerry Pi Zero 2 Set-Up (Software)
 ### STEP 1:
 - Insert Micro SD into computer
 - Open Raspberry Pi imager
