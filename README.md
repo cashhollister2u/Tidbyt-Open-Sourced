@@ -172,7 +172,7 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
 - Turn on Raspberry Pi
 - Gain remote access to the Raspberry Pi run the following command in your PC/Laptop's Terminal:
   - “ssh led_app@LedApp.local”
-- Pi will cycle through a initial boot and reboot for the first boot cycle if it takes longer than 5 minutes to get a responce repeat steps 1 and 2 data may be corrupted
+- Pi will cycle through a initial boot and reboot for the first boot cycle if it takes longer than 10 minutes to get a responce repeat steps 1 and 2 data may be corrupted
 - Run the following commands after gaining access and logging into the Raspberry Pi:
   - "sudo apt update" (update available software)
   - "sudo apt install git" (needed for the "git clone" command)
