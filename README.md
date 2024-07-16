@@ -89,6 +89,7 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
 
 - ### 3D Print Assembly:
   - NOTE: For this use case the PI and the Matrix Bonnet are both powered by the 5V 10amp charger. (unlike the Adafruit instructions)
+  - NOTE: No heating element is required for press fitting of parts.
   - <img src="https://github.com/user-attachments/assets/e8a1d252-b02a-4dae-baf6-41169f29b965" alt="IMG_0584" width="300" height="200">
   - Press the LED Matrix into the grid and ensure it is fully seated.
   - Be patient and take your time.
