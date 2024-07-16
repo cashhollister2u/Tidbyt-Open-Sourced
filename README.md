@@ -45,7 +45,8 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
 # iOS App
 - Currently in Beta ***
 - Download TestFlight from the iOS store
-- Email ledappcontroller@gmail.com with your icloud email and I can authorize the download.
+- Click on this link to Download the App via TestFlight:
+  - https://testflight.apple.com/join/O1uEL3ar
 
 # Hardware Set-Up
 - Pre-Made Button for On/Off switch (optional)
