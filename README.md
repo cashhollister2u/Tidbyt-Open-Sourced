@@ -3,7 +3,7 @@
 <br>
 <br>
 
-### Disclaimer: SSH or Remote Access is utilized to edit and install files on the Raspberry Pi. It is up to the user to configure the security settings to meet their specific needs.
+### Disclaimer: SSH or Remote Access is utilized to edit and install files on the Raspberry Pi. It is up to the user to configure the security settings to meet their specific needs. Disabling SSH after project completion is an option.
 
 <br>
 <br>
