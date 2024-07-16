@@ -38,13 +38,13 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
   - "Initial layer height" set to 0.1mm
   - "Layer height" set to 0.1mm
     
-- Main Body, Back Cover, Button, Pi Mounting Plate (Included in Main file):
-  - THE FOLLOWING SETTINGS AND CUT SHOULD BE PRE-SET IN THE FILES (CONFIRM)
-    - A "Main Body" perform a "cut" at y=20 and isolate the mounting platform for the Pi.
-    - Ensure the cut only selects the platform and not the walls of the main body.
-    - "Connectors" (Snap) on each of the 6 pillars that support the platform
-      - Depth ratio = 2.50mm / Size = 2.00mm (connector settings)
-    - Prited using "0.28mm Extra Draft @BBL X1C"
+- Main Body, Back Cover, Button, Pi Mounting Plate:
+ 
+   - A "Main Body" perform a "cut" at y=20 and isolate the mounting platform for the Pi.
+   - Ensure the cut only selects the platform and not the walls of the main body.
+   - "Connectors" (Snap) on each of the 6 pillars that support the platform
+     - Depth ratio = 2.50mm / Size = 2.00mm (connector settings)
+   - Prited using "0.28mm Extra Draft @BBL X1C"
 
 - It is recommended to wait for parts to cool down to room temp before attempting to assemble.
   - ie. The LED Matrix panel is press fit to the main body.
