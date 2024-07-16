@@ -182,6 +182,13 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
 - Have the api keys associated with the accounts you created. You will be prompted for them.
 - When prompted to reboot select "y" or yes for changes to take effect.
 - It may take 30s - 1min to reboot
+- NOTE: If you are concerned about security or are unfamiliar with ssh run this command on the raspberry pi to disable ssh.
+  - "sudo systemctl disable ssh"
+  - By doing so you will no longer be able to access the device and will have to repeat the software instalation process again to make any changes.
+  - To confirm the command do any of the following:
+    - "sudo reboot -h now"
+    - Turn off the device via the push button (optional)
+    - Turn off the device via the iOS app controller
 
 <br>
 <br>
