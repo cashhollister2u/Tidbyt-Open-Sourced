@@ -21,6 +21,9 @@
 It may be a good idea to initiate the print before completing the Hardware/Software tutorials. Print time is roughly 6.5 hours.
 Ensure a clean print plate for best adhesion. Most parts are flat and take up a large surface area.
 
+- Files can be found on MakerWorld:
+  - https://makerworld.com/en/models/543827
+
 - Material:
   - Overture PETG
     
