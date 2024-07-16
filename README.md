@@ -1,6 +1,12 @@
 # Led Board and Application Set-Up
 
+<br>
+<br>
+
 ### Disclaimer: SSH or Remote Access is utilized to edit and install files on the Raspberry Pi. It is up to the user to configure the security settings to meet their specific needs.
+
+<br>
+<br>
 
 <img src="https://github.com/user-attachments/assets/ffe1a7d8-7a17-4cde-b46c-1fd84d1a3061" alt="IMG_0584" width="300" height="200">
 <img src="https://github.com/user-attachments/assets/f7e4883c-611c-47ab-a7d1-bc2b112cb581" alt="IMG_0584" width="300" height="200">
@@ -8,6 +14,8 @@
 <img src="https://github.com/user-attachments/assets/e327c2ea-b401-46d0-a617-a2618d8a0d00" alt="IMG_0584" width="300" height="200">
 <img src="https://github.com/user-attachments/assets/88915f8c-de44-4175-ab89-3b9e7b2c442a" alt="IMG_0584" width="300" height="200">
 
+<br>
+<br>
 
 # 3D Printer Files and Settings (Bambu Labs P1S)
 It may be a good idea to initiate the print before completing the Hardware/Software tutorials. Print time is roughly 6.5 hours.
@@ -42,11 +50,17 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
   - ie. The LED Matrix panel is press fit to the main body.
   - WARNING: The board is a tight fit so take your time with its assembly. 
 
+<br>
+<br>
+
 # iOS App
 - Currently in Beta ***
 - Download TestFlight from the iOS store
 - Click on this link to Download the App via TestFlight:
   - https://testflight.apple.com/join/O1uEL3ar
+
+<br>
+<br>
 
 # Hardware Set-Up
 - Pre-Made Button for On/Off switch (optional)
@@ -54,6 +68,9 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
 - If utilizing the button it must be soldered to the "SCL" and "GND" pins of the Matrix Bonnet. The orientation of the wires does not matter. (optional)
 - <img src="https://github.com/user-attachments/assets/fcf34ac5-c3ea-4da0-820d-abdcc2f5171a" alt="IMG_0584" width="300" height="200">
 - For the best quality image solder pin 4 and pin 18 with a jumper wire. (Further details and pictures in the adafruit link below the "Recommendations" section) (optional)
+
+<br>
+<br>
 
 - ### Recommendations:
   - Complete all soldering before connecting the Raspberry Pi to the Matrix Bonnet.
@@ -63,7 +80,10 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
 - This page provides detailed instructions on how to propperly connect the bonnet to either the Raspberry Pi 4 or the RaspBerry Pi Zero 2 as well as connecting the bonnet to the LED Matrix.
   - Refer to "3D Print Assembly" before following the tutorial below.
   - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/driving-matrices
-    
+
+<br>
+<br>
+
 - ### 3D Print Assembly:
   - NOTE: For this use case the PI and the Matrix Bonnet are both powered by the 5V 10amp charger. (unlike the Adafruit instructions)
   - <img src="https://github.com/user-attachments/assets/e8a1d252-b02a-4dae-baf6-41169f29b965" alt="IMG_0584" width="300" height="200">
@@ -90,9 +110,8 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
   - <img src="https://github.com/user-attachments/assets/66329423-7f69-448b-9951-19eb4568c578" alt="IMG_0584" width="300" height="200">
   - Utilize 4 M2.5 screws to fix the back plate onto the Main Body.
     
-
-
-
+<br>
+<br>
 
 # Software Set-Up
 
@@ -111,8 +130,14 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
 - CLIENT ID AND CLIENT SECRET are required for the led application
     - To Locate go to "DashBoard" select the app you created and click on "Settings" in the top right corner.
 
+<br>
+<br>
+
 ## Download Raspberry Pi Imager
 - https://www.raspberrypi.com/software/
+
+<br>
+<br>
 
 ## RaspBerry Pi Zero 2 Set-Up (Software)
 ### STEP 1:
@@ -160,6 +185,8 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
 - When prompted to reboot select "y" or yes for changes to take effect.
 - It may take 30s - 1min to reboot
 
+<br>
+<br>
 
 ## That completes the software set up for the Raspberry Pi 
 - If the hardware is configured propperly you should see the LED Display propt you to connect the iOS app
@@ -170,7 +197,10 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
 - Click "Authenticate"
 - Click "Home" on the app display and select one fo the four display options
   - If selecting "Spotify" ensure Spotify is currently playing. Otherwise the screen may display an error.
- 
+
+<br>
+<br>
+
 ## Basic Operation:
 - The board takes ~23s to prompt a connection to iOS after it is turned on.
 - Plug in the board to turn on or press the (optional) physical button
@@ -179,7 +209,24 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
   - To be safe look through the vent holes in the back for the green light to stop flashing on the Raspberry Pi (The Matrix Bonnet has a green light that will remain lit)
 - WARNING: If the board is unpluged without using the iOS app / physical button it may corrupt the files.
 - WARNING: Spotify Updates every 8 seconds (this is for program stability) / Song titles DO NOT scroll (this is for album cover image stability)
-- NOTE: If anyone actually uses this I can post an update fixing the Warnings above. 
+- NOTE: If anyone actually uses this I can post an update fixing the Warnings above.
+
+<br>
+<br>
+
+# Support The Project:
+- Donations to support the project/creator can be made here:
+  - https://buymeacoffee.com/cashhollister
+
+<br>
+<br>
+
+# Questions/Recommendations/iOS Beta Access
+- Utilize this email for any support questions, recommendations for the project, or access to the iOS Beta:
+  - ledappcontroller@gmail.com
+
+<br>
+<br>
 
 ## Debugging Hardware / Software
 - If the board displays lights but does not appear as expected or jumbled, first follow the steps here:
@@ -201,12 +248,14 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
   - ie. Pi GPIO #16 - Matrix G2 (Green row2) pin: This pin controls the green LEDs on the bottom half of the display
   - Then re-affirm the solder conenction at that pin
 
-# Questions/Recommendations/iOS Beta Access
-- Utilize this email for any support questions, recommendations for the project, or access to the iOS Beta:
-  - ledappcontroller@gmail.com
- 
+<br>
+<br>
 
 # Hardware List (Raspberry Pi Zero 2) (Hardware for other pi variants may be different)
+### Total Cost ~ $85.00 - $100.00
+
+<br>
+
 - Raspbery Pi Zero 2 
   - [https://www.adafruit.com/product/4296](https://www.adafruit.com/product/5291)
 - GPIO header pins (solderless) (OPTION 1)
