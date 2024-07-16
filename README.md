@@ -214,6 +214,7 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
   - https://www.adafruit.com/product/2822
 - 16 or 32 gb Micro SD Card for Raspberry Pi
   - [Amazon](https://www.amazon.com/SanDisk-Ultra-microSDXC-Memory-Adapter/dp/B073JWXGNT/ref=sr_1_8?crid=3BA0SAU4Z3BVC&dib=eyJ2IjoiMSJ9.gma2hVfUgy-OBJ-COHM6pbshqICnhWgymisufu6qkTikGx9DMDOT-3dc7naXHtt0GM5F7Dc-Kzp8nmsDFj5eZRuSTCXBZHiIuxiikhiAopv-ALnQMJtZZVEZLa4dxi8Tr1MkCnvShyoG4zFOWRbtyg1_XfMy-BaL2RcxbW6T4j0bIq9oyaprOGw9gEz1MJSrd4Xhy54847gErjsLfFbm8xlkS_w2olOighTBk9fXdI329hnd6R0Gkh-Ykuode-GpM0Fs1ZgVM-bJ4eExbhLlgDixoFgMeH63-s7JflFici0.Aj76Y7zJJKxqQMwN3vLCvcBD0_9C8W23b6iYM99UH6c&dib_tag=se&keywords=32+gb+micro+sd&qid=1720498866&s=electronics&sprefix=32+gb+micro+sd%2Celectronics%2C131&sr=1-8)
+- A device to insert the Micro SD into your laptop or PC to install Pi OS.
 - gpio extention (optional)
   - https://www.adafruit.com/product/2223?gad_source=1&gbraid=0AAAAADx9JvRoR7oa6Xt2MOaaaoUYxxSop&gclid=CjwKCAjwnK60BhA9EiwAmpHZw2OqCtdnE_kqISjUMuYMXSpIDnCF-1EZaFNnZ6MPz9KHeC91vC1JABoCNKQQAvD_BwE
 - Pre-Made Button for On/Off switch (optional)
