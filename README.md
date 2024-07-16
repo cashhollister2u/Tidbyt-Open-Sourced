@@ -228,7 +228,7 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
   - [Amazon](https://www.amazon.com/10A-Power-Supply-Adapter-Switching/dp/B07H9XRZBP/ref=sr_1_2?crid=31A60WJNMKB4L&dib=eyJ2IjoiMSJ9.je877a0xnR4pfYxTF_0U6VDr9ZWNS3ATxNAOGSqhnWM__La7IzTYY-_Mg6yM072tnJQ8MZD80hURwLODE9jFtcwCrMps8yq-YBtffrXRhZI8poQBa3unZHCNaHB_90uOPAmM2O-sTZ-_fa6W8CyureTFLDfdoQTdiTz8Bvg_fhH1QWd44OH97XIj0_Qqs0qsn-s-NyyGDLf-SiQkKKxLwJ04E0gCHSD87Zubs4jyWnQ.B6CIy5o4OmhKjVlphmawFai7AqbyU_APljyTN0I94Vw&dib_tag=se&keywords=5V+10+Amp+charger+cool&qid=1720499223&sprefix=5v+10+amp+charger+cool%2Caps%2C99&sr=8-2)
 - RaspBerry Pi Brass Spacer Kit with M2.5 Nuts and Screws
   - [Amazon](https://www.amazon.com/Geekworm-Raspberry-Installation-Standoff-Accessories/dp/B0756CW6Y2/ref=sr_1_6?crid=1WIJ52THVGKAP&dib=eyJ2IjoiMSJ9.4vBz5jbdFFOUtiz9dlUIeNocA1PZrMFELvxfpBsJEauqSijKi8LOeXqvuXxtIXUkgwOsq_9PlPbgfsAGFdJaNxzQZgTj-yARI76t3xqQWNyB9At3IsBCIWPSF6dq5QvkSnASFhCdwWz463ftttUuG7MaqhrD9E-eNHP1ojmMRMxDNMBSbyNPwyLDj4hL06kszQLs6uqNLImpSXhbkOveOf-zzTU06B8clHoEHzymkRY.cGx_1wekEp3kUjAIoMOEXhOosZFJUN_5ML_G8om5nY0&dib_tag=se&keywords=RaspBerry+Pi+Brass+Spacer+Kit&qid=1720499301&sprefix=raspberry+pi+brass+spacer+kit%2Caps%2C102&sr=8-6)
-- Solder Iron / Jumper Wire (This can be skipped but reduces quality) (Would also have to reinstall the bonnet library refer to above instructions)
+- Solder Iron / Jumper Wire (This can be skipped but reduces quality)
 - Access to 3D Printer (for housing)
 - Small Skrew Driver
 - A micro usb charger may be usefull for debugging hardware but not required 
