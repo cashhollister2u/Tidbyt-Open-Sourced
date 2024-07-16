@@ -90,27 +90,63 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
 - ### 3D Print Assembly:
   - NOTE: For this use case the PI and the Matrix Bonnet are both powered by the 5V 10amp charger. (unlike the Adafruit instructions)
   - NOTE: No heating element is required for press fitting of parts.
+  
+  <br>
+  <br>
+  
   - <img src="https://github.com/user-attachments/assets/e8a1d252-b02a-4dae-baf6-41169f29b965" alt="IMG_0584" width="300" height="200">
   - Press the LED Matrix into the grid and ensure it is fully seated.
   - Be patient and take your time.
   - Inspect corners and check for imperfections in the 3D print.
+   
+  <br>
+  <br>
+  
   - <img src="https://github.com/user-attachments/assets/5c3ad6b3-e747-45ac-81a8-a2008dacf2e1" alt="IMG_0584" width="200" height="200">
   - Press 4 M2.5 Nuts into the designated slots.
+  
+  <br>
+  <br>
+  
   - <img src="https://github.com/user-attachments/assets/7591a1ad-b411-4995-ba34-72711d964276" alt="IMG_0584" width="300" height="200">
   - Loosly fix 4 M2.5 Nuts to the bottom of the Pi Zero 2 using brass spacers. (Spacer orientation/length may vary based on set up)
+   
+  <br>
+  <br>
+  
   - <img src="https://github.com/user-attachments/assets/18092f95-6b54-448c-b287-f98f52648602" alt="IMG_0584" width="300" height="200">
   - Screw the Pi to the Mounting Plate in this orientation.
+   
+  <br>
+  <br>
+  
   - <img src="https://github.com/user-attachments/assets/0f1811aa-7da6-4f4e-b10d-cedf0ff81c21" alt="IMG_0584" width="300" height="200">
   - Connect the Bonnet to the Pi and Connect the Matrix Power Cables to the Bonnet.
   - There may be a gap between the bonnet and the Pi Zero 2 that exposes the GPIO Pins. This is OK and may be required based on spacer orientation.
+     
+  <br>
+  <br>
+  
   - <img src="https://github.com/user-attachments/assets/bd807093-b3a3-48ce-be67-4c692df9c3af" alt="IMG_0584" width="300" height="200">
   - Press the Mounting Plate into the snap connectors (Can be Re-Used if removed carefully).
   - Assemble the Push Button (optional). (Insert Button into the frame and use the provided washer to secure from the exterior)
+  
+  <br>
+  <br>
+  
   - <img src="https://github.com/user-attachments/assets/c52055da-5a29-41c1-82c6-a9a016c38896" alt="IMG_0584" width="200" height="300">
   - Press fit the 3D printed button cover over the cap of the Push Button (optional).
+   
+  <br>
+  <br>
+  
   - <img src="https://github.com/user-attachments/assets/86a10883-a1e5-46aa-b2e4-a2e793339b4a" alt="IMG_0584" width="300" height="200">
   - Route the wires and insert the 5V 10amp external power source into the bonnet. Ensure the plastic cylinder attached to the power cable is inside the housing as in the picture. It acts as a strain relief for the Pi.
   - Press 4 M2.5 Nuts in the four corners of the frame.
+   
+  <br>
+  <br>
+  
   - <img src="https://github.com/user-attachments/assets/66329423-7f69-448b-9951-19eb4568c578" alt="IMG_0584" width="300" height="200">
   - Utilize 4 M2.5 screws to fix the back plate onto the Main Body.
     
