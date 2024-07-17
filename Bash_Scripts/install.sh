@@ -36,16 +36,6 @@ else
     echo "isolcpus=3 added to $CMDLINE_FILE"
 fi
 
-# Append button functionality to /boot/firmware/config.txt for ON/OFF Switch
-CONFIG_FILE="/boot/firmware/config.txt"
-if grep -q "dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up" $CONFIG_FILE; then
-    echo "dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up is already present in $CONFIG_FILE"
-else
-    echo "Appending dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up to $CONFIG_FILE"
-    echo "dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up" | sudo tee -a $CONFIG_FILE > /dev/null
-    echo "dtoverlay=gpio-shutdown,gpio_pin=3,active_low=1,gpio_pull=up added to $CONFIG_FILE"
-fi
-
 # Create and configure shutdown file via GPIO
 OFF_SWITCH_FILE="/etc/udev/rules.d/99-gpio-power.rules" # path to file
 sudo tee $OFF_SWITCH_FILE > /dev/null <<EOL # write the following to said file
