@@ -10,6 +10,7 @@ def button_channel_change(user, shared_user):
     BUTTON_PIN = 3  # GPIO 3
 
     possible_channels = ["clock_stock", "stock", "spotify2", "weather"]
+    alt_channels = {"invalid_stock": 1, "invalid_zipcode":3, "no_device_active":2, "req_spot_auth":2, "req_stock_api_key":1 , "req_weather_api_key":3}
 
     press_time = None
 
@@ -39,7 +40,10 @@ def button_channel_change(user, shared_user):
                     curernt_index = possible_channels.index(user.channel)
                     new_index = (curernt_index + 1) % len(possible_channels)
                     user.channel = possible_channels[new_index]
-
+                elif user.channel in alt_channels:
+                    curernt_index = alt_channels[user.channel]
+                    new_index = (curernt_index + 1) % len(possible_channels)
+                    user.channel = possible_channels[new_index]
     
     try:
         # Initialize the button with the specified pin
