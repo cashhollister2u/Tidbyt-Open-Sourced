@@ -38,20 +38,21 @@ class Spotify_2_View:
             if not self.stable_mode:
                 self.main_canvas.Clear()
            
-        
-            # updating data
-            title = self.user.api_data['spotify']['name']
-            is_playing = self.user.api_data['spotify']['is_playing']
-            duration = self.user.api_data['spotify']['duration']
-            progress = self.user.api_data['spotify']['progress']
-            image_data = self.user.api_data['spotify']['album_cover']
+            try: 
+                # updating data
+                title = self.user.api_data['spotify']['name']
+                is_playing = self.user.api_data['spotify']['is_playing']
+                duration = self.user.api_data['spotify']['duration']
+                progress = self.user.api_data['spotify']['progress']
+                image_data = self.user.api_data['spotify']['album_cover']
 
-
-            # clear canvas when song changes
-            if self.title != title:
-                print(title, self.title)
-                self.title = title
-                self.main_canvas.Clear()
+                # clear canvas when song changes
+                if self.title != title:
+                    print(title, self.title)
+                    self.title = title
+                    self.main_canvas.Clear()
+            except:
+                self.user.channel = 'no_device_active'
         
 
             # close view gracefully

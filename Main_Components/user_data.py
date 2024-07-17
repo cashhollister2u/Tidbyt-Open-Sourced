@@ -118,7 +118,9 @@ class User():
                               self.channel = 'no_device_active'
                          self.api_data["spotify"] = spotify_data # update display data
                     else:
-                         print(self.data_interval) # testing purposes to view interval
+                        pass
+                        #print(self.data_interval) # testing purposes to view interval
+                        
                except Exception as e:
                     self.channel = "req_spot_auth" if self.channel == 'spotify2' else self.channel
                     spotify_data = None
