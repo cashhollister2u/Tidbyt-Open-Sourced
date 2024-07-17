@@ -216,8 +216,8 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
 - Run the following commands after gaining access and logging into the Raspberry Pi:
   - "sudo apt update" (update available software)
   - "sudo apt install git" (needed for the "git clone" command)
-  - "git clone https://github.com/cashhollister2u/Led_App_Prod.git" (download this repository)
-  - "sudo ./Led_App_Prod/Bash_Scripts/install.sh" (refer to "Bash_Scripts/install.sh")
+  - "git clone https://github.com/cashhollister2u/Tidbyt-Open-Sourced.git" (download this repository)
+  - "sudo ./Tidbyt-Open-Sourced/Bash_Scripts/install.sh" (refer to "Bash_Scripts/install.sh")
 - Follow the prompts that the terminal displays
 - Have the api keys associated with the accounts you created. You will be prompted for them.
 - When prompted to reboot select "y" or yes for changes to take effect.
@@ -285,7 +285,7 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
   - the blue is connected to the pin being tested
   - Pin refrence here - https://pinout.xyz
   - I recommend testing the control, address, and color pins refrenced here - https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/pinouts
-  - Locate the test_pins.py file in the Led_App_Prod" directory
+  - Locate the test_pins.py file in the Tidbyt-Open-Sourced" directory
   - With the ground (yellow) connected to ground and the positive (blue) connected to the pin being tested run the python script.
   - You will be prompted to enter the pin you are testing
   - If the connection is good the led will flash red once
