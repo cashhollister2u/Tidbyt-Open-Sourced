@@ -31,10 +31,10 @@ def button_channel_change(user, shared_user):
         press_time = None
         user = shared_user.get_user() # check if user is established
 
-        if hold_duration and user:
+        if hold_duration:
             if hold_duration > 1:
                 shutdown_callback()
-            else:
+            elif user:
                 print("Short Press detected")
                 if user.channel in possible_channels:
                     curernt_index = possible_channels.index(user.channel)
