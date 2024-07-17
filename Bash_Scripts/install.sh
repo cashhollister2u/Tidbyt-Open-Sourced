@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # alter permissions to write and read to error log
-chmod 666 /home/led_app/Led_App_Prod/Error_Logs/error_log.txt
+chmod 666 /home/led_app/Tidbyt-Open-Sourced/Error_Logs/error_log.txt
 echo "changed permissions on error log file"
 
 # alter permissions for writing and reading token file 
-chmod 666 /home/led_app/Led_App_Prod/Secrets/spotify_refresh_token.json
+chmod 666 /home/led_app/Tidbyt-Open-Sourced/Secrets/spotify_refresh_token.json
 echo "changed permissions on spotify refresh token file"
 
 # make the off command executable
-chmod +x /home/led_app/Led_App_Prod/Bash_Scripts/off_command.py
+chmod +x /home/led_app/Tidbyt-Open-Sourced/Bash_Scripts/off_command.py
 echo " off command file is now executable"
 
 # change sudoers file to allow for shutdown w/out password
@@ -55,8 +55,8 @@ After=network.target
 [Service]
 User=root
 Group=root
-WorkingDirectory=/home/led_app/Led_App_Prod       
-ExecStart=/usr/bin/python3 /home/led_app/Led_App_Prod/main.py
+WorkingDirectory=/home/led_app/Tidbyt-Open-Sourced       
+ExecStart=/usr/bin/python3 /home/led_app/Tidbyt-Open-Sourced/main.py
 Restart=always
 
 [Install]
@@ -86,7 +86,7 @@ read -p "Enter your Twelve Data API Key: " twelve_api_key
 read -p "Enter your OpenWeatherMap API Key: " weather_api_key
 
 # Path to the api_keys.py file
-API_KEYS_FILE="/home/led_app/Led_App_Prod/Secrets/api_keys.py"
+API_KEYS_FILE="/home/led_app/Tidbyt-Open-Sourced/Secrets/api_keys.py"
 
 # Insert the inputs into the api_keys.py file using sed
 sed -i "s|CLIENT_ID = \"\"|CLIENT_ID = \"$spotify_client_id\"|" $API_KEYS_FILE
