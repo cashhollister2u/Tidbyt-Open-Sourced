@@ -9,7 +9,10 @@ class Clock_Stock_View:
         self.options = display.options # display settings
         self.matrix = display.matrix # init display 
         self.main_canvas = display.main_canvas
-        self.ticker_symbol = self.user.api_data['stock']['stock_instance']['symbol']
+        try:
+            self.ticker_symbol = self.user.api_data['stock']['stock_instance']['symbol'] 
+        except:
+            self.user.channel = "req_stock_api_key"
 
     def run(self):
 
