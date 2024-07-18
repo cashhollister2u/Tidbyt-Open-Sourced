@@ -121,7 +121,7 @@ echo "API keys have been set in $API_KEYS_FILE."
 read -p "Enter the zip code: " zip_code
 
 # Prompt the user for stock
-read -p "Enter the stock: " stock
+read -p "Enter the stock ticker symbole ie. MSFT (All CAPS): " stock
 
 # Create the JSON file and write the user inputs
 cat <<EOF > /home/led_app/Tidbyt-Open-Sourced/Secrets/user_inputs.json
