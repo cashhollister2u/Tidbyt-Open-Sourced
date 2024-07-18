@@ -1,6 +1,7 @@
-from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
+from rgbmatrix import RGBMatrix, RGBMatrixOptions
 import time
 import gc
+import json
 
 # custom views
 from Views.spotify_2_view import Spotify_2_View
@@ -9,13 +10,15 @@ from Views.clock_stock_view import Clock_Stock_View
 from Views.clock_weather_view import Clock_Weather_View
 
 # alt views
-from Views_Alt.connect_iOS import Connect_IOS
 from Views_Alt.req_spotify_auth import Spotify_Auth
 from Views_Alt.no_spotify_device import No_Spotify_Device
 from Views_Alt.req_stock_key import Stock_Api_key
 from Views_Alt.invalid_stock_input import Invalid_Stock
 from Views_Alt.req_weather_key import Weather_Api_key
 from Views_Alt.invalid_zipcode import Invalid_Zip_Code
+
+# User Class
+from Main_Components.user_data import User
 
 ### IMPORTANT : Must delete and call garbage collector on the current display before switching to a new dislay 
 ###             otherwise function will crash very baddly                                                     
@@ -37,20 +40,38 @@ class Generate_Display():
             self.matrix = RGBMatrix(options=self.options)
             self.main_canvas = self.matrix.CreateFrameCanvas()
 
+def create_user():
+    with open("Secrets/user_inputs.json", "r") as file:
+        data = json.load(file)
+    
+    zip_code = data.get("zip_code") if data.get("zip_code") else None
+    stock = data.get("stock") if data.get("stock") else None
+    channel = data.get("channel") if data.get("channel") else None
 
-def display_loop(user, shared_user):   
+    try:
+        # access refresh token saved to .json file
+        with open("Secrets/spotify_refresh_token.json", 'r') as file:
+            refresh_token = json.load(file)
+            refresh_token = refresh_token['refresh_token']
+    except:
+        refresh_token = None
+
+    return User(client_id='cc3c15a0cadf9c', stock=stock, zip_code=zip_code, spotify_refresh_token=refresh_token, channel=channel)
+
+
+def display_loop(shared_user):   
 
     display = Generate_Display()
     
+    user = create_user()
+    user.set_spotify_access_token()
+    user.create_thread_Not_Flask()
+    # pass user to main after created
+    shared_user.set_user(user)
+
     # main loop
     while True:
-        
-        if user == None:     
-            #user = shared_user.get_user()
-            run_connect_ios_view = Connect_IOS(shared_user=shared_user, display=display)
-            user = run_connect_ios_view.run()
-
-        else:
+        if user:
             # main views
             if user.channel == "clock_stock":
                 if user.isDataReady:
@@ -84,7 +105,6 @@ def display_loop(user, shared_user):
                         
             elif user.channel == "weather":
                 if user.isDataReady:
-                    print('before weather class')
                     run_clock_view = Clock_Weather_View(user=user, display=display)
                     run_clock_view.run()
                     

@@ -210,6 +210,17 @@ class User():
           else:
                return jsonify(message="Thread already running for user{}".format(self.client_id)), 204
      
+     # init data collection for user
+     def create_thread_Not_Flask(self):
+          if self.thread is None:
+               # create user thread for personal api calls
+               self.thread = Thread(target=self.api_data_container)
+               self.thread.daemon = True
+               self.thread.start()
+               
+          else:
+               print('failed to create non flask thread')
+     
 
      # changes user parameters
      def update_thread(self, client_id:str, stock:str, zip_code:int, brightness:int):

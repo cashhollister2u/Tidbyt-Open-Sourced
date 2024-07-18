@@ -2,7 +2,7 @@ import threading
 import time
 
 from Main_Components.display_select import display_loop
-from Main_Components.http_server import run_flask_server, user, shared_user
+from Main_Components.http_server import run_flask_server, shared_user
 from Main_Components.push_button import button_channel_change
 
 if __name__ == "__main__":
@@ -11,10 +11,10 @@ if __name__ == "__main__":
      thread.daemon = True
      thread.start()
 
-     button_controller = threading.Thread(target=button_channel_change, args=(user, shared_user))
+     button_controller = threading.Thread(target=button_channel_change, args=(shared_user,))
      button_controller.daemon = True
      button_controller.start()
      
      time.sleep(1) # a bandaid for the race condition between flask and display_loop
 
-     display_loop(user=user, shared_user=shared_user)
+     display_loop(shared_user=shared_user)

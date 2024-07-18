@@ -96,6 +96,24 @@ sed -i "s|WEATHER_API_KEY = \"\"|WEATHER_API_KEY = \"$weather_api_key\"|" $API_K
 
 echo "API keys have been set in $API_KEYS_FILE."
 
+# Prompt the user for zip code 
+read -p "Enter the zip code: " zip_code
+
+# Prompt the user for stock
+read -p "Enter the stock: " stock
+
+# Create the JSON file and write the user inputs
+cat <<EOF > Secrets/user_inputs.json
+{
+    "zip_code": "$zip_code",
+    "stock": "$stock",
+    "channel": "weather"
+}
+EOF
+
+chmod 666 /home/led_app/Tidbyt-Open-Sourced/Secrets/user_inputs.json
+echo "user_inputs.json has been created with the provided values."
+
 # download adafruit matrix driver
 curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/main/rgb-matrix.sh >rgb-matrix.sh
 sudo bash rgb-matrix.sh

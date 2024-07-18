@@ -9,6 +9,7 @@ class Clock_Stock_View:
         self.options = display.options # display settings
         self.matrix = display.matrix # init display 
         self.main_canvas = display.main_canvas
+        self.ticker_symbol = self.user.api_data['stock']['stock_instance']['symbol']
 
     def run(self):
 
@@ -66,6 +67,9 @@ class Clock_Stock_View:
             price_displayed = self.user.api_data['stock']['price_displayed']
             percent_change = self.user.api_data['stock']['stock_instance']['percent_change'] # want is as a raw str 
             price_change = self.user.api_data['stock']['price_change']
+
+            if self.ticker_symbol != ticker_symbol:
+                break
 
             # set stock colors
             if "-" in percent_change: 

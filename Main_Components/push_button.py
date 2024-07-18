@@ -3,7 +3,7 @@ import os
 import time 
 
 
-def button_channel_change(user, shared_user):
+def button_channel_change(shared_user):
     user = None
 
     # Pin number where the button is connected
