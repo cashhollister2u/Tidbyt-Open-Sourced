@@ -36,14 +36,35 @@ else
     echo "isolcpus=3 added to $CMDLINE_FILE"
 fi
 
-# Create and configure shutdown file via GPIO
-OFF_SWITCH_FILE="/etc/udev/rules.d/99-gpio-power.rules" # path to file
-sudo tee $OFF_SWITCH_FILE > /dev/null <<EOL # write the following to said file
-ACTION!=\"REMOVE\", SUBSYSTEM==\"input\", KERNEL==\"event*\", \\
-SUBSYSTEMS==\"platform\", DRIVERS==\"gpio-keys\", \\
-ATTRS{keys}==\"116\", TAG+=\"power-switch\"
+
+# Create and configure the loading_display.service file
+SERVICE_FILE="/etc/systemd/system/loading_display.service" # path to systemctl file
+sudo tee $SERVICE_FILE > /dev/null <<EOL # write the following to said file
+[Unit]
+Description=Led App loading
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/home/led_app/Tidbyt-Open-Sourced       
+ExecStart=/usr/bin/python3 /home/led_app/Tidbyt-Open-Sourced/loading.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
 EOL
-echo "OFF SWITCH file created at $OFF_SWITCH_FILE"
+echo "Service file created at $SERVICE_FILE"
+
+# Reload the systemd daemon to recognize the new service
+sudo systemctl daemon-reload
+
+# Enable the new service to start on boot
+sudo systemctl enable loading_display.service
+
+# Start the new service immediately
+sudo systemctl start loading_display.service
+echo "loading_display.service has been started and enabled to start on boot"
+
 
 # Create and configure the led_app.service file
 SERVICE_FILE="/etc/systemd/system/led_app.service" # path to systemctl file
