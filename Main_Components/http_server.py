@@ -1,8 +1,6 @@
 from flask import Flask, jsonify
-import socket
 import json
 import time
-import subprocess
 
 from Main_Components.user_data import User, ShareUser
 from Api_Connections.spotify.auth import get_user_authorization, get_spotify_refresh
@@ -12,9 +10,6 @@ from Error_Logs.log_tools import log_error_to_file
 
 app = Flask(__name__)
 
-# user cache
-user = None
-
 # more gracefull transfer of class data after user is created
 shared_user = ShareUser()
 
@@ -23,7 +18,7 @@ alt_views = ['req_spot_auth', 'req_stock_api_key', 'req_weather_api_key', 'no_de
 # set initial api parametes and init data collection 
 @app.route('/start/<string:client_id>/<string:stock>/<int:zip_code>/<string:channel>/<float:brightness>')
 def start_user_thread(client_id:str, stock:str, zip_code:int, channel:str, brightness:int):
-     global user
+     user = shared_user.get_user()
      try:
           # access refresh token saved to .json file
           with open("Secrets/spotify_refresh_token.json", 'r') as file:
@@ -34,20 +29,15 @@ def start_user_thread(client_id:str, stock:str, zip_code:int, channel:str, brigh
      
      if user == None:
           user = User(client_id=client_id, stock=stock, zip_code=zip_code, channel=channel, spotify_refresh_token=refresh_token, brightness=int(brightness))
-          
           user.set_spotify_access_token()
-
           # pass user to main after created
           shared_user.set_user(user)
-
           response = user.create_thread()
           
           # withhold http responce till data is loaded for views / alt views
           while user.displayLoaded != channel and user.displayLoaded not in alt_views:
                time.sleep(1)
-
           return response
-     
      else:
           return jsonify(f"User already retreiving data"), 404 
 
@@ -55,9 +45,18 @@ def start_user_thread(client_id:str, stock:str, zip_code:int, channel:str, brigh
 # update api parameters for data collection 
 @app.route('/update/<string:client_id>/<string:stock>/<int:zip_code>/<float:brightness>')
 def update_user_thread(client_id:str, stock:str, zip_code:int, brightness:int):
-     global user
+     user = shared_user.get_user()
      if user:
-          return user.update_thread(client_id=client_id, stock=stock, zip_code=zip_code, brightness=int(brightness))
+          # update the data saved on device 
+          with open("Secrets/user_inputs.json", "r") as file:
+               data = json.load(file)
+               data["zip_code"] = zip_code
+               data["stock"] = stock
+
+          with open("Secrets/user_inputs.json", 'w') as file:
+               json.dump(data, file, indent=4)
+
+          return user.update_thread(client_id=client_id, stock=stock, zip_code=zip_code, brightness=100)
      else:
           return jsonify(f"User {client_id} not found"), 404 
      
@@ -65,15 +64,22 @@ def update_user_thread(client_id:str, stock:str, zip_code:int, brightness:int):
 # switch led display
 @app.route('/channel/<string:client_id>/<string:channel>')
 def update_user_channel(client_id:str, channel:str):
-     global user
+     user = shared_user.get_user()
      # updates channel 
      try:
           response = user.update_channel(channel) 
 
+          # update the data saved on device 
+          with open("Secrets/user_inputs.json", "r") as file:
+               data = json.load(file)
+               data["channel"] = channel
+
+          with open("Secrets/user_inputs.json", 'w') as file:
+               json.dump(data, file, indent=4)
+
           # withhold http responce till data is loaded
           while user.displayLoaded != channel and user.displayLoaded not in alt_views:
                time.sleep(1)
-
           return response
      
      except Exception as e:
@@ -94,8 +100,7 @@ def get_spotify_auth_url():
 # Spotify auth Process
 @app.route('/spotify_refresh/<string:auth_code>')
 def get_spotify_refresh_token(auth_code:str):
-     global user
-
+     user = shared_user.get_user()
      try:
           refresh_token = {
                "refresh_token":get_spotify_refresh(auth_code)
@@ -107,7 +112,6 @@ def get_spotify_refresh_token(auth_code:str):
           # updates token mid session
           if user != None:
                user.spotify_refresh_token = refresh_token['refresh_token']
-
           return jsonify(f"Spotify Authenticated"), 204
     
      except Exception as e:
@@ -116,6 +120,8 @@ def get_spotify_refresh_token(auth_code:str):
 
 @app.route("/turn_off/<string:client_id>")
 def turn_off_display(client_id:str):
+     user = shared_user.get_user()
+     
      if user == None:
           off_switch() 
           return jsonify(f"Shut Down Complete"), 204

@@ -36,14 +36,35 @@ else
     echo "isolcpus=3 added to $CMDLINE_FILE"
 fi
 
-# Create and configure shutdown file via GPIO
-OFF_SWITCH_FILE="/etc/udev/rules.d/99-gpio-power.rules" # path to file
-sudo tee $OFF_SWITCH_FILE > /dev/null <<EOL # write the following to said file
-ACTION!=\"REMOVE\", SUBSYSTEM==\"input\", KERNEL==\"event*\", \\
-SUBSYSTEMS==\"platform\", DRIVERS==\"gpio-keys\", \\
-ATTRS{keys}==\"116\", TAG+=\"power-switch\"
+
+# Create and configure the loading_display.service file
+SERVICE_FILE="/etc/systemd/system/loading_display.service" # path to systemctl file
+sudo tee $SERVICE_FILE > /dev/null <<EOL # write the following to said file
+[Unit]
+Description=Led App loading
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/home/led_app/Tidbyt-Open-Sourced       
+ExecStart=/usr/bin/python3 /home/led_app/Tidbyt-Open-Sourced/loading.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
 EOL
-echo "OFF SWITCH file created at $OFF_SWITCH_FILE"
+echo "Service file created at $SERVICE_FILE"
+
+# Reload the systemd daemon to recognize the new service
+sudo systemctl daemon-reload
+
+# Enable the new service to start on boot
+sudo systemctl enable loading_display.service
+
+# Start the new service immediately
+sudo systemctl start loading_display.service
+echo "loading_display.service has been started and enabled to start on boot"
+
 
 # Create and configure the led_app.service file
 SERVICE_FILE="/etc/systemd/system/led_app.service" # path to systemctl file
@@ -95,6 +116,24 @@ sed -i "s|TWELVE_API_KEY = \"\"|TWELVE_API_KEY = \"$twelve_api_key\"|" $API_KEYS
 sed -i "s|WEATHER_API_KEY = \"\"|WEATHER_API_KEY = \"$weather_api_key\"|" $API_KEYS_FILE
 
 echo "API keys have been set in $API_KEYS_FILE."
+
+# Prompt the user for zip code 
+read -p "Enter the zip code: " zip_code
+
+# Prompt the user for stock
+read -p "Enter the stock ticker symbole ie. MSFT (All CAPS): " stock
+
+# Create the JSON file and write the user inputs
+cat <<EOF > /home/led_app/Tidbyt-Open-Sourced/Secrets/user_inputs.json
+{
+    "zip_code": "$zip_code",
+    "stock": "$stock",
+    "channel": "weather"
+}
+EOF
+
+chmod 666 /home/led_app/Tidbyt-Open-Sourced/Secrets/user_inputs.json
+echo "user_inputs.json has been created with the provided values."
 
 # download adafruit matrix driver
 curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/main/rgb-matrix.sh >rgb-matrix.sh

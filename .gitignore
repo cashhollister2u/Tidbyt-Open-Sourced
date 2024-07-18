@@ -18,3 +18,5 @@ __pycache__/api_keys.cpython-311.pyc
 Secrets/spotify_refresh_token.json
 Secrets/location_data.json
 Error_Logs/error_log.txt
+Secrets/api_keys.py
+Secrets/user_inputs.json
