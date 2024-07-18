@@ -103,7 +103,7 @@ read -p "Enter the zip code: " zip_code
 read -p "Enter the stock: " stock
 
 # Create the JSON file and write the user inputs
-cat <<EOF > Secrets/user_inputs.json
+cat <<EOF > /home/led_app/Tidbyt-Open-Sourced/Secrets/user_inputs.json
 {
     "zip_code": "$zip_code",
     "stock": "$stock",
