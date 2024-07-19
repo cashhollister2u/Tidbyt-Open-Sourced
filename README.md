@@ -3,6 +3,12 @@
 <br>
 <br>
 
+### Build your own retro pixel display. 
+- This is a beginnner level project. This is a good project for learning how to solder (optional). It presents an opportunity to become more familiar within a terminal/shell. Modify the code and create your own custom views/displays.   
+
+<br>
+<br>
+
 ### Disclaimer: SSH or Remote Access is utilized to edit and install files on the Raspberry Pi. It is up to the user to configure the security settings to meet their specific needs. Disabling SSH after project completion is an option.
 
 <br>
