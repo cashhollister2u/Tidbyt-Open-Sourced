@@ -43,7 +43,7 @@ Ensure a clean print plate for best adhesion. Most parts are flat and take up a 
   - White PETG
   - Printed using "*0.08mm Extra Fine @BBL X1C"
   - All "Initial Layer Speeds" set to 50mm/s
-  - All "Other Layers Speeds" set to 50mm/s
+  - All "Top Layers Speeds" set to 50mm/s
   - "Initial layer height" set to 0.1mm
   - "Layer height" set to 0.1mm
     
