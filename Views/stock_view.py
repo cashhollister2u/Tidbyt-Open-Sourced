@@ -102,6 +102,9 @@ class StockView:
                     if (quote['close']) < (stock_instance['previous_close']):
                         # assign line length based on ratio to day low, unit of measurement, and relative location of x axis 
                         end_point = x_axis_height + (math.ceil((float(stock_instance['previous_close']) - float(quote['close'])) / low_unit_measurement))
+                        # fix edge condition with run off graph on red day
+                        if x_axis_height == 15:
+                            end_point = end_point - 1
                         # Display the 1/64 lines on graph
                         graphics.DrawLine(self.main_canvas, index, x_axis_height, index, end_point - 1, red)
                         
